@@ -12,7 +12,7 @@ namespace MathForGames
 
         public Scene()
         {
-
+            _actors = new Actor[0];
         }
 
         public void AddActor(Actor actor)
@@ -57,8 +57,6 @@ namespace MathForGames
                 else
                 {
                     actorRemoved = true;
-                    if (_actors[i].Started)
-                        _actors[i].End();
                 }
             }
 
@@ -91,8 +89,8 @@ namespace MathForGames
                 else
                 {
                     actorRemoved = true;
-                    if (actor.Started)
-                        actor.End();
+                    if (_actors[i].Started)
+                        _actors[i].End();
                 }
             }
 
