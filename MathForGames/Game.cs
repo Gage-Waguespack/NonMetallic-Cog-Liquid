@@ -182,7 +182,7 @@ namespace MathForGames
         {
             //Creates a new window for raylib
             Raylib.InitWindow(1024, 760, "Math For Games");
-            Raylib.SetTargetFPS(60);
+            Raylib.SetTargetFPS(0);
 
             //Set up console window
             Console.CursorVisible = false;
@@ -197,12 +197,12 @@ namespace MathForGames
             Enemy enemyMid = new Enemy(10, 10, Color.GREEN, new Vector2(0, 10), new Vector2(30, 10), '■', ConsoleColor.Green);
             Enemy enemyLow = new Enemy(3, 20, Color.GREEN, new Vector2(0, 20), new Vector2(30, 20), '■', ConsoleColor.Green);
             Player player = new Player(0, 1,Color.BLUE, '@', ConsoleColor.Red);
-            Goal goal = new Goal(30, 20,Color.GREEN, player, 'G', ConsoleColor.Green);
+            Goal goal = new Goal(22, 8,Color.GREEN, player, 'G', ConsoleColor.Green);
 
             //Initialize the enmies starting values
             enemyHigh.Speed = 2;
-            enemyMid.Speed = 2;
-            enemyLow.Speed = 2;
+            enemyMid.Speed = 3;
+            enemyLow.Speed = 3.4f;
             enemyHigh.Target = player;
             enemyMid.Target = player;
             enemyLow.Target = player;
@@ -215,6 +215,7 @@ namespace MathForGames
             scene1.AddActor(enemyHigh);
             scene1.AddActor(enemyMid);
             scene1.AddActor(enemyLow);
+            scene1.AddActor(goal);
             scene2.AddActor(player);
             
             //Sets the starting scene index and adds the scenes to the scenes array
